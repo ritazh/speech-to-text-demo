@@ -27,7 +27,7 @@ Setup your own keys for Bing Speech and LUIS:
 * To get the same trained LUIS app for GetWeather, you can also import an existing app by using [GetWeather.json](GetWeather.json).  
 
 ## Acknowledgement
-Many thanks to @cwilso for developing and maintaining AudioRecorder for the awesome UI components in this app.
+Many thanks to [@cwilso](@cwilso) for developing and maintaining [AudioRecorder](https://github.com/cwilso/AudioRecorder) for the awesome UI components in this app.
 
 ## License
 Licensed using the MIT License (MIT); Copyright (c) Microsoft Corporation. For more information, please see [LICENSE](LICENSE).
