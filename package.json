@@ -1,0 +1,28 @@
+{
+  "name": "speech-to-text-demo",
+  "version": "1.0.0",
+  "description": "An application that does speech recognition and returns weather data for the city you asked about",
+  "main": "app.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritazh/speech-to-text-demo.git"
+  },
+  "author": "ritazh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ritazh/speech-to-text-demo/issues"
+  },
+  "homepage": "https://github.com/ritazh/speech-to-text-demo#readme",
+  "dependencies": {
+    "busboy": "^0.2.13",
+    "connect": "^3.4.1",
+    "express": "^4.14.0",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "request": "^2.73.0",
+    "util": "^0.10.3"
+  }
+}
