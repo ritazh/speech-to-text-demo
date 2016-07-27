@@ -23,7 +23,8 @@ Run the application then hit your browser with `http://localhost:3000`:
 Setup your own keys for Bing Speech and LUIS:
 
 * Sign up for Microsoft Cognitive Service [here](https://www.microsoft.com/cognitive-services/en-us/sign-up) and get your keys for Speech API
-* Follow the steps [here](https://www.microsoft.com/cognitive-services/en-us/luis-api/documentation/getstartedwithluis-basics) to get your LUIS application id and your LUIS Subscription-key.
+* Follow the steps [here](https://www.microsoft.com/cognitive-services/en-us/luis-api/documentation/getstartedwithluis-basics) to create your own LUIS app, then get your LUIS application id and your LUIS Subscription-key.
+* To get the same trained LUIS app for GetWeather, you can also import an existing app by using [GetWeather.json](GetWeather.json).  
 
 ## Acknowledgement
 Many thanks to @cwilso for developing and maintaining AudioRecorder for the awesome UI components in this app.

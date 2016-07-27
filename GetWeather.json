@@ -1,0 +1,251 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "GetWeather",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "getweather"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "location"
+    }
+  ],
+  "composites": [],
+  "bing_entities": [],
+  "actions": [
+    {
+      "actionName": "getweather",
+      "intentName": "getweather",
+      "actionParameters": [
+        {
+          "parameterName": "Location",
+          "entityName": "location",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "what's the weather like in san francisco",
+      "intent": "getweather",
+      "entities": []
+    },
+    {
+      "text": "what ' s the weather like in san francisco",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 7,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "what ' s the weather like in hawaii",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 7,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "is it hot in seattle",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it raining in seattle",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it cold in chicago",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it hot in arizona",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it flooding in beijing",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it snowing in tahoe",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "what's the temperature in paris",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "is it hot in hawaii",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "how's the weather in san francisco",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "how's the weather in seattle",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how's the weather in paris",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how's the weather in dc",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how's the weather in san diego",
+      "intent": "getweather",
+      "entities": []
+    },
+    {
+      "text": "how's the weather in seoul",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "how's the weather in alaska",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "is it cold in oymyakon",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it cold in moscow",
+      "intent": "getweather",
+      "entities": [
+        {
+          "entity": "location",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "is it cold in here",
+      "intent": "getweather",
+      "entities": []
+    }
+  ]
+}
