@@ -4,7 +4,7 @@ _An application that does speech recognition and returns weather data for the ci
 
 ![STT Demo](sttdemo.gif)
 
-This application is a simple live audio recorder that is based on RecorderJS and uses the [Bing Speech API](https://www.microsoft.com/cognitive-services/en-us/speech-api/documentation/overview) to recognize user's voice command while it also uses [LUIS](https://www.microsoft.com/cognitive-services/en-us/luis-api/documentation/home)(Language Understanding Intelligent Services) to interpret the location the user is asking about, then it returns the current weather information for that location using the [openweathermap APIs](http://openweathermap.org/). 
+This application is a simple live audio recorder that is based on RecorderJS and uses the [Bing Speech API](https://www.microsoft.com/cognitive-services/en-us/speech-api/documentation/overview) to recognize user's voice command while it also uses [LUIS](https://www.microsoft.com/cognitive-services/en-us/luis-api/documentation/home) (Language Understanding Intelligent Services) to interpret the location the user is asking about, then it returns the current weather information for that location using the [openweathermap APIs](http://openweathermap.org/). 
 
 ## Installation
 
