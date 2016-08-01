@@ -1,84 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Speech to Text Demo</title>
 
+    <script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/primer.js"></script>
+	<script src="js/FileSaver.min.js"></script>
+
+	<script src="js/drawing.js"></script>
 	<script src="js/audiodisplay.js"></script>
 	<script src="js/recorderjs/recorder.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/FileSaver.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<style>
-	html { overflow: hidden; }
-	body { 
-		font: 14pt Arial, sans-serif; 
-		background: lightgrey;
-		display: flex;
-		flex-direction: column;
-		height: 70vh;
-		width: 70%;
-		margin: 0 0;
-	}
-	canvas { 
-		display: inline-block; 
-		background: #202020; 
-		width: 95%;
-		height: 35%;
-		box-shadow: 0px 0px 10px blue;
-	}
-	#controls {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-around;
-		height: 20%;
-		width: 100%;
-	}
-	#output {
-		background-color: white;
-		width: 95%;
-		height: 20%;
-		box-shadow: 0px 0px 10px blue;
-		box-sizing: border-box;
-		padding: 10px;
-	}
-	#record { height: 15vh; }
-	#record.recording { 
-		background: red;
-		background: -webkit-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
-		background: -moz-radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
-		background: radial-gradient(center, ellipse cover, #ff0000 0%,lightgrey 75%,lightgrey 100%,#7db9e8 100%); 
-	}
-	#save, #save img { height: 10vh; }
-	#save { opacity: 0.25;}
-	#save[download] { opacity: 1;}
-	#viz {
-		height: 50%;
-		width: 50%;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-	}
-	@media (orientation: landscape) {
-		body { flex-direction: row;}
-		#controls { flex-direction: column; height: 70%; width: 10%;}
-		#viz { height: 100%; width: 90%;}
-	}
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
 
-	</style>
 </head>
-<body>
-	<div id="controls">
-		<img id="record" src="img/mic128.png" style='cursor:pointer;' onclick="toggleRecording(this);">
-		<a id="save" href="#"><img src="img/save.svg"></a>
-	</div>
-	<div id="viz">	
-		<canvas id="analyser" ></canvas>
-		<canvas id="wavedisplay"></canvas>
+<body style="background: #534842">
+    <div class="container">
+        <div class="jumbotron text-center" style="background: #E9E4DE; margin-top: 20px">
 
-		<div id="output">Hi there!!! I am a bot that has been trained by LUIS to get today's weather information for a city. Would you like to give it a try? Ask me about the weather in your city by recording with the mic &#x261D;</div>
-	</div>
+            <div class="row" style="display: table-row; height: 100%">
+
+                <div class="col-xs-6 text-center" style="display: table-cell; float: none; vertical-align: middle">
+
+                    <button id="btnRecord" 
+                            class=" btn_mic 
+                                    btn 
+                                    btn-danger 
+                                    btn-large 
+                                    btnup"
+                            type="button"
+                            onmousedown="btnRecordDown(this)"
+                            onmouseup="btnRecordUp(this)"
+                            onmouseout="btnRecordOut(this)">
+                    </button>
+                    <div class="form-group" style="margin-top:30px">
+                        <label for="txtPhrase">
+                            <span id="spinPhrase" style="visibility: hidden" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                            What I heard:</label>
+                        <input type="text" class="form-control" id="txtPhrase">
+                    </div>
+                    <div class="form-group">
+                        <span id="spinIntent" style="visibility: hidden" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+                        <label for="txtIntent">What I think you mean:</label>
+                        <textarea class="form-control" rows="4" id="txtIntent"></textarea>                    </div>
+                </div>
+                <div class="col-xs-6" style="display: block; float: none; width: 100%; padding-left: 50px; padding-right: 50px; vertical-align: middle">
+                    <div id="primer" style="width: 400px; display: block; margin: auto; height:400px; overflow: hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>
 </html>

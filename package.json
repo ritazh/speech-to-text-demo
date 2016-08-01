@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ritazh/speech-to-text-demo#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "busboy": "^0.2.13",
     "connect": "^3.4.1",
     "express": "^4.14.0",

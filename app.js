@@ -77,7 +77,7 @@ function LUIS(query, callback) {
     request.get({
       url: 'https://api.projectoxford.ai/luis/v1/application',
       qs: {
-        'id': 'cad83334-1da4-4363-8a77-45468fbae851', // API key from Cognitive Service LUIS service
+        'id': '04eb9f25-174a-496f-b457-787ee0b5e6e7', // API key from Cognitive Service LUIS service
         'subscription-key': 'c831821ce79e4f13844a75f6099de616', // LUIS Subscription ID
         'q': query
       }
@@ -91,25 +91,8 @@ function LUIS(query, callback) {
     });
 }
 
-function getWeather(query, callback) {
-    request.get({
-      url: 'http://api.openweathermap.org/data/2.5/weather',
-      qs: {
-        'APPID': 'bb979403214e22577769ec227d86e8fd', // LUIS APP ID for GetWeather
-        'q': query
-      }
-    }, function(err, resp, body) {
-      if(err) return callback(err);
-      try {
-        callback(null, JSON.parse(body));
-      } catch(e) {
-        callback(e);
-      }
-    });
-}
-
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function(req, res) {
   res.sendFile('index.html');
@@ -134,47 +117,7 @@ app.post('/recognize', function(req, res) {
               if(err) return console.log(err);
               result = 'Did you mean "' + speechres.results[0].lexical + '"? Confidence score: ' + speechres.results[0].confidence + '.';
               console.log(result);
-
-              LUIS(speechres.results[0].lexical, function(err, luisres) {
-                if(err) return console.log(err);
-                console.log(luisres['entities']);
-                var city = null;
-                var score = null;
-                for (var i = 0; i < luisres['entities'].length; ++i) {
-                  score = luisres['entities'][i]['score'];
-                  console.log(score);
-                  if(score > 0.5){
-                    city = luisres['entities'][i]['entity'];
-                    break;
-                  }
-                }
-                
-                if(city && score){
-                  result = result + ' <br/>We found a matching city: "' + city + '".  Confidence score: ' + score + '.';
-                  getWeather(city, function(err, weatherres) {
-                    if(err) return console.log(err);
-                    var weatherData = null;
-                    var main = weatherres['weather'][0]['description'];
-                    var temp = weatherres['main']['temp'];
-                    if(temp){
-                      temp = Math.floor(temp*9/5 - 459.67);
-                    }
-                    weatherData = 'Current weather in "' + city + '" is ' + main + '. current temperature is ' + temp + '°F.';
-                    if(weatherData){
-                      result += '<br/>' + weatherData;
-                    }
-                    
-                    console.log(result);
-                    res.status(200).send(result);
-
-                  });
-                }else{
-                  result = result + ' <br/>LUIS intent `GetWeather` was not matched for this query. HINT: Ask about a city.'; 
-                  console.log(result);
-                  res.status(200).send(result);
-                }
-                
-              });
+              res.status(200).send(speechres.results[0].lexical);
               
           });
       })
@@ -182,9 +125,17 @@ app.post('/recognize', function(req, res) {
   });
     
   req.pipe(busboy);
+});
 
-  
-})
+app.get('/luis', function(req, res) {
+  console.log(req.query.q);
+  LUIS(req.query.q, function(err, luisres) {
+      if(err) return console.log(err);
+        console.log(luisres);
+        res.status(200).send(luisres);
+    });
+});
+
 app.listen(process.env.PORT || 3000);
 console.log("Running at Port 3000");
 

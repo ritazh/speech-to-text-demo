@@ -1,0 +1,57 @@
+@keyframes btnRecordColorCycle {
+     0% {
+       background-color: #FB274A;
+     }
+     50% {
+       background-color:#C71414;
+     }
+     100% {
+       background-color: #FB274A;
+     }
+}
+
+.btn_mic
+{
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50px;
+    background: #FB274A url('../images/mic.png') no-repeat center center;
+    background-size: 40%;
+    border-style: none;
+    cursor: pointer;
+    text-transform: none;
+    border: 5px solid #ffffff;
+}
+
+.btn_mic:focus, .btn_mic:hover {
+    background: #FB274A url('../images/mic.png') no-repeat center center;
+    background-size: 40%;
+    border: 5px solid #ffffff;
+}
+
+.btnup {
+    box-shadow: 1px 4px 0 0 #A69992;
+    animation-name: none;
+}
+
+.btndown {
+	box-shadow: none;
+    margin-left: 1px;
+    margin-right: -1px;
+	margin-bottom: -4px;
+	margin-top: 4px;
+    animation-name: btnRecordColorCycle;
+    animation-duration: .7s;
+    animation-iteration-count: infinite;
+}
+
+.glyphicon-refresh-animate {
+    animation: spin .7s infinite linear;
+}
+
+@keyframes spin {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
