@@ -78,7 +78,6 @@ $(function () {
     var lastIndex = 12;
 
     window.moveLastInDirection = function(direction) {
-        console.log('moveLastInDirection' + direction);
         var newPos = lastIndex;
         var error = false;
 
@@ -123,7 +122,6 @@ $(function () {
     };
 
     window.addCell = function(position, color) {
-        console.log('addCell');
         var pos = getPositionAsIndex(position);
         if ( pos < 0 ) return;
         var hexcol = getColorHex(color);
@@ -132,6 +130,13 @@ $(function () {
         updateGrid();
     };
 
+    window.delCell = function(position) {
+        var pos = getPositionAsIndex(position);
+        if ( pos < 0 ) return;
+        cellData[pos] = defaultGrey; 
+        lastIndex = pos;
+        updateGrid();
+    };
 
     window.setupGridData = function() {
         cellData = [];
@@ -144,7 +149,6 @@ $(function () {
     };
 
     window.updateGrid = function() {
-        console.log('updateGrid');
 
         p1 = new Primer("#primer", 400, 400);
 

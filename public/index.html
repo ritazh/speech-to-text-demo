@@ -37,16 +37,20 @@
                             onmouseup="btnRecordUp(this)"
                             onmouseout="btnRecordOut(this)">
                     </button>
+                    <div class="form-group" style="margin-top:30px;font-weight:400">
+                    	Hold the button to record. Release to end.<br/>
+                    	[e.g. Move cell down, Add blue button to one]
+                    </div>
                     <div class="form-group" style="margin-top:30px">
                         <label for="txtPhrase">
                             <span id="spinPhrase" style="visibility: hidden" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
                             What I heard:</label>
-                        <input type="text" class="form-control" id="txtPhrase">
+                        <input type="text" class="form-control" id="txtPhrase" readonly="readonly">
                     </div>
                     <div class="form-group">
                         <span id="spinIntent" style="visibility: hidden" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
                         <label for="txtIntent">What I think you mean:</label>
-                        <textarea class="form-control" rows="4" id="txtIntent"></textarea>                    </div>
+                        <textarea class="form-control" rows="4" id="txtIntent" readonly="readonly"></textarea>                    </div>
                 </div>
                 <div class="col-xs-6" style="display: block; float: none; width: 100%; padding-left: 50px; padding-right: 50px; vertical-align: middle">
                     <div id="primer" style="width: 400px; display: block; margin: auto; height:400px; overflow: hidden"></div>

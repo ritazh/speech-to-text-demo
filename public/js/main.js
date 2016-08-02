@@ -42,7 +42,7 @@
     function doneEncoding(blob) {
         submit(blob);
     }
-    
+
     function intentReceived(jsonresponse)
     {
         var resp = JSON.parse(jsonresponse);
@@ -103,6 +103,24 @@
                 moveLastToCell(movePos);
             }
         }
+
+        if (resp["intents"][0]["intent"] == "delete" )
+        {
+            buildString += " [DELETE A CELL ] ";
+            var deletePosition = "";
+
+            for ( var i = 0; i < entities.length; i++ ) {
+                if ( entities[i]["type"] == "builtin.number") {
+                    deletePosition = entities[i]["entity"];
+                    buildString += " [ Position: " + entities[i]["entity"] + "] ";
+                }
+            }
+
+            if ( deletePosition != "") {
+                delCell(deletePosition);
+            }
+        }
+
 
         $("#txtIntent").val(buildString);
 

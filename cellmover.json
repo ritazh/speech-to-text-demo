@@ -1,0 +1,1084 @@
+{
+  "luis_schema_version": "1.3.0",
+  "name": "cellmover",
+  "desc": "LUIS demo to explore moving colored cells in a grid",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "delete"
+    },
+    {
+      "name": "AddCell"
+    },
+    {
+      "name": "MoveCell"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "CellColor"
+    },
+    {
+      "name": "position"
+    },
+    {
+      "name": "direction"
+    }
+  ],
+  "composites": [
+    {
+      "name": "CellType",
+      "children": [
+        "direction"
+      ]
+    }
+  ],
+  "bing_entities": [
+    "number"
+  ],
+  "actions": [
+    {
+      "actionName": "delete",
+      "intentName": "delete",
+      "actionParameters": []
+    },
+    {
+      "actionName": "AddCell",
+      "intentName": "AddCell",
+      "actionParameters": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "add a red cell",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the cell down",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "direction",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "move the cell up",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "direction",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "move the red cell to one",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add a blue cell to three",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the blue cell down",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the red cell to four",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the red cell left",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the blue cell up",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the green cell down",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put a green cell in seven",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put a blue square in box five",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put a red square in two",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put a red cell in six",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add a green cell to one",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put a blue cell in the ten",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 6,
+          "endPos": 6
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move it up",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put the black box in seven",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put the red box in two",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the black cell to three",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move it right",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move it down",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move it to ten",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "move it to twenty",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "shift it up",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move the black cell up",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move it left",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "shift it down",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "shift it left",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "shift it right",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add a green box to 20",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make ten orange",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make twenty yellow",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make three red",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make twenty five yellow",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellColor",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "make eleven salmon",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make five brown",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i don't think so insane",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "move it to four",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "add a blue box to 25",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add a red cell to 3",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add a black box 24",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move it to 16",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 3,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "move it to sell 14",
+      "intent": "MoveCell",
+      "entities": []
+    },
+    {
+      "text": "move the green box down",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make ten red",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put a green box in 6",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add a blue cell position 15",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "put the red box in two?t=0.7152162989061839",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make 5 green",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make seven blue",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make twenty pink",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make five orange",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "position",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "make 18 purple",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "i want you to put a blue box in 15",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 7,
+          "endPos": 7
+        },
+        {
+          "entity": "position",
+          "startPos": 9,
+          "endPos": 9
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 6,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "remove the blue box from 12",
+      "intent": "delete",
+      "entities": [
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "get rid of 15",
+      "intent": "delete",
+      "entities": []
+    },
+    {
+      "text": "put a green box in seven",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 3,
+          "endPos": 3
+        },
+        {
+          "entity": "position",
+          "startPos": 5,
+          "endPos": 5
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move square right",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "move square left",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "direction",
+          "startPos": 2,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "add purple cell to three",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "position",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "add red cell to three",
+      "intent": "AddCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 2,
+          "endPos": 2
+        },
+        {
+          "entity": "position",
+          "startPos": 4,
+          "endPos": 4
+        },
+        {
+          "entity": "CellColor",
+          "startPos": 1,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "move cell to the right",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    },
+    {
+      "text": "move cell to the left",
+      "intent": "MoveCell",
+      "entities": [
+        {
+          "entity": "CellType",
+          "startPos": 1,
+          "endPos": 1
+        },
+        {
+          "entity": "direction",
+          "startPos": 4,
+          "endPos": 4
+        }
+      ]
+    }
+  ]
+}
