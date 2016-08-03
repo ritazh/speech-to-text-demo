@@ -45,7 +45,7 @@ function speechToText(filename, accessToken, callback) {
   fs.readFile(filename, function(err, waveData) {
     if(err) return callback(err);
     request.post({
-      url: 'https://653b18d0e1f24f1397a20586e2654959.api.cris.ai/cris/speech/query?cid=a1787a15-7150-4ee4-b277-f51ddb98be87', //'https://speech.platform.bing.com/recognize/query',
+      url: 'https://653b18d0e1f24f1397a20586e2654959.api.cris.ai/cris/speech/query?cid=a1787a15-7150-4ee4-b277-f51ddb98be87', //'https://speech.platform.bing.com/recognize',
       qs: {
         'scenarios': 'ulm',
         'appid': '31b3d95b-af74-4550-9619-de76fe33f0f0', 
