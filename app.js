@@ -13,7 +13,8 @@ var fs = require('fs'),
     bodyParser = require('body-parser');
 
 var clientId = 'test-app';                             
-var clientSecret = 'f735c587f01b4c5a82048418caf5c97f'; //'ceb21dbbce474431ad3fc95b12a6cc90'; // API key from Default Cognitive Service Speech service
+var clientSecret = 'f735c587f01b4c5a82048418caf5c97f'; 
+//'ceb21dbbce474431ad3fc95b12a6cc90'; // API key from Bing Speech service
 var savedFile = null;
 
 function getAccessToken(clientId, clientSecret, callback) {
@@ -47,7 +48,8 @@ function speechToText(filename, accessToken, callback) {
       url: 'https://653b18d0e1f24f1397a20586e2654959.api.cris.ai/cris/speech/query?cid=a1787a15-7150-4ee4-b277-f51ddb98be87', //'https://speech.platform.bing.com/recognize/query',
       qs: {
         'scenarios': 'ulm',
-        'appid': '31b3d95b-af74-4550-9619-de76fe33f0f0', //'D4D52672-91D7-4C74-8AD8-42B1D98141A5',// Uisng default STT
+        'appid': '31b3d95b-af74-4550-9619-de76fe33f0f0', 
+        //'D4D52672-91D7-4C74-8AD8-42B1D98141A5',// Using Bing Speech service
         'locale': 'en-US',
         'device.os': 'wp7',
         'version': '3.0',
