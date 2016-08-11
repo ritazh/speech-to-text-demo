@@ -12,7 +12,7 @@ var fs = require('fs'),
     connect = require('connect'),
     bodyParser = require('body-parser');
 
-var clientId = 'test-app';                             
+var clientId = 'test-app';   
 var clientSecret = 'f735c587f01b4c5a82048418caf5c97f'; 
 //'ceb21dbbce474431ad3fc95b12a6cc90'; // API key from Bing Speech service
 var savedFile = null;
