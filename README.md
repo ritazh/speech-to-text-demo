@@ -26,7 +26,8 @@ Setup your own keys for Bing Speech and LUIS:
 
 * Sign up for Microsoft Cognitive Service [here](https://www.microsoft.com/cognitive-services/en-us/sign-up) and get your keys for Speech API
 * Follow the steps [here](https://www.microsoft.com/cognitive-services/en-us/luis-api/documentation/getstartedwithluis-basics) to create your own LUIS app, then get your LUIS application id and your LUIS Subscription-key.
-* To get the same trained LUIS app for moving cells, you can also import an existing app by using [cellmover.json](cellmover.json).  
+* To get the same trained LUIS app for moving cells, you can also import an existing app by using [cellmover.json](cellmover.json). 
+* To get the same context trained by CRIS, you can upload [cris.json](cris.json) to create your own language model. 
 
 ## Acknowledgement
 Many thanks to [@rickbarraza](@rickbarraza) for designing and developing the user interface for this application.
