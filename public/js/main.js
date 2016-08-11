@@ -159,6 +159,7 @@
     }
 
     window.btnRecordDown = function (e) {
+
         $('#btnRecord').removeClass('btnup').addClass('btndown');
         $('#spinIntent').css('visibility', 'hidden');
         $('#spinPhrase').css('visibility', 'hidden');
